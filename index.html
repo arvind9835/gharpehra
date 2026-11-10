@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GharPehra Bokaro — short-duration home-watch coverage while your family is away.">
+<title>GharPehra Bokaro — Home Watch While You Travel</title>
+<style>
+:root{
+  --navy:#0b2239; --blue:#135d96; --teal:#0d7c75; --sky:#eaf6fb;
+  --ice:#f6fbfd; --white:#fff; --ink:#102231; --muted:#5c7080;
+  --line:#d8e7ee; --soft:#eef8f8; --warm:#fff8ec; --ok:#e8f7f2;
+  --shadow:0 20px 55px rgba(11,34,57,.11); --radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);background:linear-gradient(180deg,#f8fcfe 0%,#fff 32%,#f8fcfe 100%);line-height:1.55;
+}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,calc(100% - 32px));margin:auto}
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;gap:20px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;color:var(--navy)}
+.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,var(--blue),var(--teal));color:#fff;display:grid;place-items:center;box-shadow:0 10px 28px rgba(19,93,150,.24)}
+.logo svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2}
+.navlinks{display:flex;gap:22px;align-items:center;color:var(--muted);font-size:.94rem}
+.button{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 20px;font-weight:800;border:1px solid transparent;cursor:pointer;transition:.18s ease}
+.button.primary{background:var(--blue);color:#fff;box-shadow:0 10px 24px rgba(19,93,150,.20)}
+.button.primary:hover{background:#0d4e80;transform:translateY(-1px)}
+.button.secondary{background:#fff;border-color:var(--line);color:var(--navy)}
+.button.teal{background:var(--teal);color:#fff}
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:54px;align-items:center;padding:54px 0 50px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:#e7f5fb;border:1px solid #cce7f3;color:#15577f;font-weight:850;font-size:.8rem;letter-spacing:.02em}
+h1{font-size:clamp(2.7rem,6vw,5.15rem);letter-spacing:-.06em;line-height:.96;margin:20px 0;color:var(--navy)}
+.lead{font-size:1.12rem;color:var(--muted);max-width:680px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px;color:var(--muted);font-size:.88rem}
+.trust span:before{content:"✓";color:var(--teal);font-weight:900;margin-right:6px}
+.visual{background:#fff;border:1px solid var(--line);border-radius:30px;padding:24px;box-shadow:var(--shadow)}
+.visual-top{min-height:285px;border-radius:22px;position:relative;overflow:hidden;background:radial-gradient(circle at 80% 20%,rgba(13,124,117,.18),transparent 26%),linear-gradient(145deg,#eaf6fb,#dff4f2);display:grid;place-items:center}
+.house{width:72%;max-width:310px;aspect-ratio:1.28;background:#fff;border-radius:10px 10px 7px 7px;position:relative;box-shadow:0 20px 38px rgba(11,34,57,.13)}
+.house:before{content:"";position:absolute;left:-10%;right:-10%;top:-34%;height:45%;background:var(--navy);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.window{position:absolute;width:20%;height:26%;top:27%;background:#cdeaf5;border:6px solid #edf5f8}
+.w1{left:9%}.w2{right:9%}.door{position:absolute;width:23%;height:49%;left:38.5%;bottom:0;background:#a97750}
+.status-badge{position:absolute;right:7%;bottom:7%;background:var(--teal);color:#fff;border-radius:16px;padding:12px 15px;font-size:.86rem;font-weight:850;box-shadow:0 12px 30px rgba(13,124,117,.28)}
+.pilot-note{margin-top:17px;padding:13px 15px;border-radius:15px;background:var(--soft);border:1px solid #d1ece8;color:#285c59;font-size:.88rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:20px;padding:19px}
+.stat strong{display:block;font-size:2rem;line-height:1;color:var(--navy);letter-spacing:-.04em;margin-bottom:8px}
+.stat p{margin:0;color:var(--muted);font-size:.88rem}
+.source{display:block;margin-top:9px;font-size:.73rem;color:#6e8290}
+.source a{text-decoration:underline}
+.section{padding:72px 0}
+.section-head{max-width:780px;margin-bottom:34px}
+h2{font-size:clamp(2rem,4vw,3.15rem);line-height:1.03;letter-spacing:-.045em;margin:0 0 12px;color:var(--navy)}
+.muted{color:var(--muted)}
+.alert-band{background:linear-gradient(100deg,var(--navy),#123c5c);color:#fff;padding:28px;border-radius:24px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.alert-band h3{margin:0 0 5px;font-size:1.35rem}.alert-band p{margin:0;color:#cfe0eb}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature,.plan,.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.icon,.num{width:43px;height:43px;border-radius:14px;background:#e9f6f7;color:var(--teal);display:grid;place-items:center;font-weight:900;margin-bottom:16px}
+.feature h3,.plan h3,.step h3{margin:0 0 8px;color:var(--navy)}
+.local-strip{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.local-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:25px}
+.local-chip{display:inline-block;background:#e7f5fb;color:#15577f;border:1px solid #cce7f3;padding:6px 10px;border-radius:999px;margin:4px 5px 4px 0;font-size:.82rem;font-weight:750}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.plan{position:relative}
+.plan.featured{border:2px solid var(--blue);box-shadow:var(--shadow)}
+.badge{position:absolute;top:16px;right:16px;background:var(--blue);color:#fff;border-radius:999px;padding:5px 9px;font-size:.69rem;font-weight:900}
+.price{font-size:2.25rem;font-weight:950;letter-spacing:-.05em;color:var(--navy);margin:13px 0 1px}
+.per{font-size:.86rem;color:var(--muted)}
+.plan ul{list-style:none;padding:0;margin:19px 0 0}.plan li{padding:9px 0;border-top:1px solid var(--line);font-size:.92rem}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.partner-band{background:linear-gradient(145deg,#e9f6fb,#e6f7f4);border:1px solid #cfe8ee;border-radius:26px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.partner-band h3{font-size:1.5rem;margin:0 0 8px}
+.partner-list{margin:0;padding-left:19px;color:#405d68}
+.formwrap{display:grid;grid-template-columns:.82fr 1.18fr;gap:28px;background:linear-gradient(145deg,var(--navy),#0d4050);color:#fff;padding:40px;border-radius:30px}
+.formwrap h2{color:#fff}.formwrap .muted{color:#c8d9e2}
+form{background:#fff;color:var(--ink);padding:24px;border-radius:22px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-size:.8rem;font-weight:800;margin-bottom:6px;color:#405665}
+input,select,textarea{width:100%;border:1px solid #ccdde5;border-radius:12px;padding:12px 13px;font:inherit;color:var(--ink);background:#fff}
+textarea{min-height:90px;resize:vertical}.full{grid-column:1/-1}.fine{font-size:.76rem;color:var(--muted);margin-top:10px}
+.quote{display:none;margin-top:18px;background:var(--soft);border:1px solid #cfe3ec;border-radius:17px;padding:18px;color:var(--navy)}
+.quote.show{display:block}
+.qrow{display:flex;justify-content:space-between;gap:15px;padding:7px 0;border-bottom:1px solid #d8e7ee}.qrow:last-child{border:0}
+.total{font-size:1.35rem;font-weight:900}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;color:#425b69}.check input{width:auto;margin-top:4px}.check a{color:var(--blue);text-decoration:underline}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.booking-status{display:none;margin-top:14px;padding:12px 14px;border-radius:13px}
+.booking-status.ok{display:block;background:var(--ok);color:#245d50}
+.booking-status.err{display:block;background:#fdecec;color:#8c2c2c}
+.disclaimer{margin-top:18px;background:var(--warm);border:1px solid #f1dcae;padding:14px 16px;border-radius:14px;color:#665329;font-size:.82rem}
+.contact{background:#fff;border:1px solid var(--line);border-radius:25px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:22px}
+.contact a{color:var(--blue);text-decoration:underline;font-weight:800}
+footer{padding:28px 0 48px;color:var(--muted);font-size:.84rem}
+.footerrow{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.button[disabled]{opacity:.65;cursor:not-allowed}
+@media(max-width:900px){
+ .navlinks a:not(.button){display:none}.hero,.formwrap,.local-strip,.partner-band{grid-template-columns:1fr}
+ .stats,.grid3,.plans{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.alert-band{grid-template-columns:1fr}
+}
+@media(max-width:560px){.steps,.formgrid{grid-template-columns:1fr}.formwrap{padding:23px}.full{grid-column:auto}.contact{display:block}h1{font-size:3.1rem}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<nav>
+  <a class="brand" href="#">
+    <span class="logo" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20H4z"/><path d="M9.5 20v-6h5v6"/><path d="M12 7.4v4.2"/></svg>
+    </span>
+    GharPehra <span style="font-weight:700;color:#6b7f8c">Bokaro</span>
+  </a>
+  <div class="navlinks">
+    <a href="#why">Why now</a>
+    <a href="#pricing">Plans</a>
+    <a href="#book" class="button primary">Book protection</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">BOKARO · TEMPORARY HOME WATCH</div>
+    <h1>Your family can travel.<br>Your home doesn't have to stay unwatched.</h1>
+    <p class="lead">GharPehra is a Bokaro-first short-duration home-watch service for families travelling for hometown visits, weddings, festivals, vacations or work — when the house may otherwise remain unattended.</p>
+    <div class="hero-actions">
+      <a href="#book" class="button primary">Check price & availability</a>
+      <a href="#why" class="button secondary">Why GharPehra?</a>
+    </div>
+    <div class="trust">
+      <span>Verified Pehra Partners</span>
+      <span>Defined day / night shifts</span>
+      <span>Bokaro-first pilot</span>
+    </div>
+  </div>
+
+  <div class="visual">
+    <div class="visual-top">
+      <div class="house"><div class="window w1"></div><div class="window w2"></div><div class="door"></div></div>
+      <div class="status-badge">● Pehra Partner on duty</div>
+    </div>
+    <div class="pilot-note"><strong>Local by design:</strong> Starting with Bokaro Steel City and nearby Bokaro localities.</div>
+  </div>
+</section>
+
+<div class="stats" id="why">
+  <div class="stat">
+    <strong>150 homes</strong>
+    <p>were reported as lock-break house-theft incidents across Bokaro district in 2025, compared with 138 in 2024.</p>
+    <span class="source"><a href="https://www.jagran.com/jharkhand/bokaro/ig-takes-strict-stand-on-rising-theft-incidents-in-bokaro-seeks-threemonth-crime-report-40083398.html" target="_blank" rel="noopener">Dainik Jagran · 24 Dec 2025</a></span>
+  </div>
+  <div class="stat">
+    <strong>19 homes</strong>
+    <p>were reported targeted in October 2025 — the festival period covering Durga Puja, Diwali and Chhath.</p>
+    <span class="source"><a href="https://www.jagran.com/jharkhand/bokaro/ig-takes-strict-stand-on-rising-theft-incidents-in-bokaro-seeks-threemonth-crime-report-40083398.html" target="_blank" rel="noopener">Dainik Jagran · 24 Dec 2025</a></span>
+  </div>
+  <div class="stat">
+    <strong>₹15 lakh</strong>
+    <p>worth of property was reported stolen in October 2026 from a locked Sector-5B home while the family was away.</p>
+    <span class="source"><a href="https://www.livehindustan.com/jharkhand/bokaro/story-bokaro-theft-bsl-retired-officer-s-home-robbed-of-property-worth-rs-15-lakh-201791830059496.html" target="_blank" rel="noopener">Live Hindustan · 13 Oct 2026</a></span>
+  </div>
+</div>
+</div>
+
+<section class="section">
+<div class="wrap">
+  <div class="alert-band">
+    <div>
+      <h3>A locked house is not the same as a watched house.</h3>
+      <p>GharPehra adds a visible, accountable human presence during the exact period your family is away.</p>
+    </div>
+    <a href="#book" class="button teal">Protect my home</a>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+  <div class="section-head">
+    <h2>Made around how Bokaro families actually travel</h2>
+    <p class="muted">Festival trips, weddings, hometown visits, railway journeys and outstation work can leave a home unattended for one night, a weekend or several days. GharPehra is designed for those short gaps — not only long monthly security contracts.</p>
+  </div>
+  <div class="local-strip">
+    <div class="local-card">
+      <h3 style="margin-top:0">Initial Bokaro focus</h3>
+      <!--<p class="muted">Pilot availability will be built locality-by-locality, subject to partner-agency staffing.</p> -->
+      <span class="local-chip">Bokaro Steel City Sectors</span>
+      <span class="local-chip">Chas</span>
+      <span class="local-chip">Balidih</span>
+      <span class="local-chip">Bari Cooperative</span>
+	  <span class="local-chip">Jainmore</span>
+      <span class="local-chip">Nearby approved localities</span>
+    </div>
+    <div class="local-card">
+      <h3 style="margin-top:0">When people may need it</h3>
+      <p class="muted">Durga Puja · Diwali · Chhath · Family Weddings · Hometown Visits · Vacations · Hospital Stays · Work Travel.</p>
+      <p class="fine">Service coverage depends on confirmed deployment availability.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+  <div class="section-head">
+    <h2>Professional deployment, not an informal sitter</h2>
+    <p class="muted">Before live operations, GharPehra intends to partner with a reputed, appropriately licensed private security agency. Pehra Partners deployed to homes will be trained, certified through the partner's applicable process, identity/background verified and assigned with documented shifts.</p>
+  </div>
+  <div class="partner-band">
+    <div>
+      <h3>What we expect from our security partner</h3>
+      <ul class="partner-list">
+        <li>Applicable PSARA licensing and compliance</li>
+        <li>Trained and certified personnel</li>
+        <li>Antecedent / identity verification</li>
+        <li>Supervisor and emergency escalation support</li>
+      </ul>
+    </div>
+    <div>
+      <h3>What the homeowner sees</h3>
+      <ul class="partner-list">
+        <li>Clear day / night / full-day assignment</li>
+        <li>Defined check-in and shift handover</li>
+        <li>Single GharPehra contact for the booking</li>
+        <li>Partner details confirmed before deployment</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="pricing">
+<div class="wrap">
+  <div class="section-head">
+    <h2>Pricing</h2>
+    <p class="muted">Introductory pilot rates. The website calculates your estimate before anything is submitted.</p>
+  </div>
+  <div class="plans">
+    <div class="plan">
+      <h3>Day Pehra</h3>
+      <div class="price">₹399</div>
+      <div class="per">12 hours · 8:00 AM–8:00 PM</div>
+      <ul>
+        <li>Day-time home presence</li>
+        <li>Defined assignment window</li>
+        <li>Attendance confirmation</li>
+        <li>Incident escalation path</li>
+      </ul>
+    </div>
+    <div class="plan">
+      <h3>Night Pehra</h3>
+      <div class="price">₹499</div>
+      <div class="per">12 hours · 8:00 PM–8:00 AM</div>
+      <ul>
+        <li>Night-time home presence</li>
+        <li>Defined assignment window</li>
+        <li>Attendance confirmation</li>
+        <li>Incident escalation path</li>
+      </ul>
+    </div>
+    <div class="plan featured">
+      <div class="badge">BEST COVERAGE</div>
+      <h3>Full-Day Pehra</h3>
+      <div class="price">₹849</div>
+      <div class="per">24-hour coverage</div>
+      <ul>
+        <li>Day + night coverage</li>
+        <li>Shift rotation / handover</li>
+        <li>Continuous booked-period presence</li>
+        <li>Priority escalation</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+  <div class="section-head"><h2>How it works</h2></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h3>Enter your dates</h3><p class="muted">Tell us when your Bokaro home will be unattended.</p></div>
+    <div class="step"><div class="num">2</div><h3>See the price</h3><p class="muted">The website calculates the complete booking estimate before submission.</p></div>
+    <div class="step"><div class="num">3</div><h3>Review & approve</h3><p class="muted">Read the terms, privacy consent and estimate, then confirm.</p></div>
+    <div class="step"><div class="num">4</div><h3>We confirm deployment</h3><p class="muted">Your request is recorded and acknowledged; final deployment follows partner availability.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="book">
+<div class="wrap">
+  <div class="formwrap">
+    <div>
+      <div class="eyebrow" style="background:#124f68;color:#fff;border-color:#2d6d82">BOKARO BOOKING REQUEST</div>
+      <h2 style="margin-top:18px">Review the price before you submit.</h2>
+      <p class="muted">Nothing is sent to GharPehra until you calculate the estimate, review it and press <b>Confirm & Submit</b>.</p>
+      <div class="disclaimer">The calculated amount is a booking estimate, not a tax invoice or final deployment guarantee. Final service depends on partner-agency personnel availability and confirmation. In an emergency, contact 112/police.</div>
+    </div>
+
+    <form id="bookingForm">
+      <div class="formgrid">
+        <div><label for="name">Full name</label><input id="name" required placeholder="Your name"></div>
+        <div><label for="mobile">Mobile / WhatsApp</label><input id="mobile" required inputmode="tel" placeholder="+91..."></div>
+        <div class="full"><label for="email">Email</label><input id="email" type="email" required placeholder="you@example.com"></div>
+        <div><label for="locality">Bokaro locality / sector</label><input id="locality" required placeholder="e.g. Sector 4, Chas"></div>
+        <div><label for="propertyType">Property type</label><select id="propertyType"><option>Independent house</option><option>Apartment</option><option>Villa</option><option>Other</option></select></div>
+        <div><label for="startDate">Start date</label><input id="startDate" type="date" required></div>
+        <div><label for="endDate">End date</label><input id="endDate" type="date" required></div>
+        <div class="full"><label for="plan">Plan</label><select id="plan" required>
+          <option value="Day Pehra|399">Day Pehra — ₹399 / service date</option>
+          <option value="Night Pehra|499">Night Pehra — ₹499 / service date</option>
+          <option value="Full-Day Pehra|849">Full-Day Pehra — ₹849 / service date</option>
+        </select></div>
+        <div class="full"><label for="notes">Notes</label><textarea id="notes" placeholder="Optional booking notes. Do not enter alarm passwords, key codes, CCTV passwords or details of valuables here."></textarea></div>
+        <div class="full"><button class="button primary" id="estimateBtn" type="button" style="width:100%">Calculate booking estimate</button></div>
+      </div>
+
+      <div class="quote" id="quote">
+        <h3 style="margin-top:0">Review your booking</h3>
+        <div class="qrow"><span>Plan</span><b id="qPlan"></b></div>
+        <div class="qrow"><span>Service dates</span><b id="qUnits"></b></div>
+        <div class="qrow"><span>Rate</span><b id="qRate"></b></div>
+        <div class="qrow total"><span>Estimated total</span><span id="qTotal"></span></div>
+
+        <p class="fine">Billing uses inclusive service dates. Example: 10 Nov to 12 Nov = 3 service dates.</p>
+
+        <div style="margin-top:15px">
+          <label class="check"><input id="terms" type="checkbox"> <span>I have read and agree to the <a href="GharPehra_Terms_Conditions_Bokaro.html" target="_blank">Terms & Conditions</a>.</span></label>
+        </div>
+        <div style="margin-top:10px">
+          <label class="check"><input id="privacy" type="checkbox"> <span>I consent to use of my booking/contact information for verification, deployment, billing, support and incident management.</span></label>
+        </div>
+        <div style="margin-top:10px">
+          <label class="check"><input id="quoteConfirm" type="checkbox"> <span>I confirm that I have reviewed the booking estimate shown above.</span></label>
+        </div>
+
+        <div class="actions">
+          <button class="button primary" id="confirmBtn" type="button">Confirm & Submit</button>
+          <button class="button secondary" id="editBtn" type="button">Edit details</button>
+        </div>
+      </div>
+
+      <div id="bookingStatus" class="booking-status"></div>
+      <p class="fine">After successful submission, GharPehra receives an instant email and you receive an acknowledgment email.</p>
+    </form>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+  <div class="contact">
+    <div>
+      <div class="eyebrow">CONTACT GHARPEHRA</div>
+      <h2 style="margin:12px 0 6px;font-size:2rem">Questions about the Bokaro pilot?</h2>
+      <p class="muted" style="margin:0">For booking questions, local availability, agency partnerships or pilot feedback.</p>
+    </div>
+    <div><a href="mailto:arvind9835@gmail.com">arvind9835@gmail.com</a></div>
+  </div>
+</div>
+</section>
+
+<div class="wrap">
+<footer>
+  <div class="footerrow">
+    <div><strong>GharPehra Bokaro</strong> · Home-watch service</div>
+    <!--<div>Bokaro first · planned expansion: Jharkhand → Bihar</div> -->
+  </div>
+</footer>
+</div>
+
+<script>
+/*
+  Paste the SAME /exec URL from your currently working Version 5 website here.
+*/
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyNlFI09VF5dUrHiGXsc8VjpaiLsT1A3iPbjclpWSdstfyYMTC1Oa_vJk3D3_KXzy-O/exec";
+
+const form = document.getElementById('bookingForm');
+const quote = document.getElementById('quote');
+const statusBox = document.getElementById('bookingStatus');
+let calculated = null;
+
+function money(n){
+  return new Intl.NumberFormat('en-IN',{
+    style:'currency',currency:'INR',maximumFractionDigits:0
+  }).format(n);
+}
+function serviceUnits(start,end){
+  const a=new Date(start+'T00:00:00');
+  const b=new Date(end+'T00:00:00');
+  if(isNaN(a)||isNaN(b)||b<a) return 0;
+  return Math.floor((b-a)/86400000)+1;
+}
+function showStatus(msg,type){
+  statusBox.className='booking-status '+type;
+  statusBox.textContent=msg;
+}
+
+document.getElementById('estimateBtn').addEventListener('click',()=>{
+  if(!form.reportValidity()) return;
+  const [planName,rateText]=document.getElementById('plan').value.split('|');
+  const rate=Number(rateText);
+  const units=serviceUnits(
+    document.getElementById('startDate').value,
+    document.getElementById('endDate').value
+  );
+  if(units<1){
+    showStatus('End date must be on or after start date.','err');
+    return;
+  }
+  calculated={planName,rate,units,total:rate*units};
+  document.getElementById('qPlan').textContent=planName;
+  document.getElementById('qUnits').textContent=units;
+  document.getElementById('qRate').textContent=money(rate);
+  document.getElementById('qTotal').textContent=money(calculated.total);
+  quote.classList.add('show');
+  showStatus('Estimate ready. Review it below before confirming.','ok');
+});
+
+document.getElementById('editBtn').addEventListener('click',()=>{
+  quote.classList.remove('show');
+  calculated=null;
+  showStatus('Edit your details and calculate the estimate again.','ok');
+});
+
+document.getElementById('confirmBtn').addEventListener('click',async()=>{
+  if(!calculated){
+    showStatus('Please calculate the estimate first.','err');
+    return;
+  }
+  if(
+    !document.getElementById('terms').checked ||
+    !document.getElementById('privacy').checked ||
+    !document.getElementById('quoteConfirm').checked
+  ){
+    showStatus('Please accept the terms, privacy consent and booking estimate confirmation.','err');
+    return;
+  }
+  if(APPS_SCRIPT_URL.includes('PASTE_YOUR')){
+    showStatus('Google Sheets connection is not configured in this file yet. Paste the same working Apps Script /exec URL from Version 5.','err');
+    return;
+  }
+
+  const payload={
+    customerName:document.getElementById('name').value.trim(),
+    mobile:document.getElementById('mobile').value.trim(),
+    email:document.getElementById('email').value.trim(),
+    locality:document.getElementById('locality').value.trim(),
+    propertyType:document.getElementById('propertyType').value,
+    plan:calculated.planName,
+    unitRate:calculated.rate,
+    startDate:document.getElementById('startDate').value,
+    endDate:document.getElementById('endDate').value,
+    serviceUnits:calculated.units,
+    estimatedTotal:calculated.total,
+    notes:document.getElementById('notes').value.trim(),
+    termsAccepted:true,
+    privacyConsent:true,
+    quoteConfirmed:true,
+    source:"GharPehra Bokaro Website"
+  };
+
+  const btn=document.getElementById('confirmBtn');
+  btn.disabled=true;
+  btn.textContent='Submitting...';
+
+  try{
+    const res=await fetch(APPS_SCRIPT_URL,{
+      method:'POST',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify(payload)
+    });
+    const data=await res.json();
+    if(!data.ok) throw new Error(data.error||'Submission failed');
+
+    showStatus(
+      'Booking request '+data.bookingId+
+      ' submitted successfully. Please check your email for acknowledgment.',
+      'ok'
+    );
+    form.reset();
+    quote.classList.remove('show');
+    calculated=null;
+  }catch(e){
+    showStatus('Could not submit the booking. Please try again or contact GharPehra.','err');
+  }finally{
+    btn.disabled=false;
+    btn.textContent='Confirm & Submit';
+  }
+});
+</script>
+</body>
+</html>
